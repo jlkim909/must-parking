@@ -11,7 +11,7 @@ const MapContainer = styled.div`
   box-shadow: 2px 2px 6px rgb(0 0 0 / 0.16);
   border-radius: 8px;
 `;
-function Map({ map, ps, setParkingLot, userPosition }) {
+function Map({ map, ps, userPosition }) {
   const mapRef = useRef(null);
   const placeOverlay = useRef(null);
 
@@ -91,7 +91,7 @@ function Map({ map, ps, setParkingLot, userPosition }) {
 
   const displayPlaces = useCallback(
     (places) => {
-      setParkingLot(places);
+      //setParkingLot(places);
       for (var i = 0; i < places.length; i++) {
         // 마커를 생성하고 지도에 표시합니다
         var marker = addMarker(
@@ -107,7 +107,7 @@ function Map({ map, ps, setParkingLot, userPosition }) {
         })(marker, places[i]);
       }
     },
-    [addMarker, displayPlaceInfo, setParkingLot]
+    [addMarker, displayPlaceInfo]
   );
 
   const placesSearchCB = useCallback(

@@ -4,7 +4,7 @@ import { IoCafe, IoCart } from "react-icons/io5";
 import { RiGasStationFill } from "react-icons/ri";
 import { ImSpoonKnife } from "react-icons/im";
 import Ticket from "./Ticket";
-import { useRecoilState } from "recoil";
+import { useRecoilValue } from "recoil";
 import { AppInfomation } from "../store/store";
 import NoTicket from "./NoTicket";
 import Dialog from "./Dialog/Dialog";
@@ -44,7 +44,7 @@ const TicketContainer = styled.div`
 `;
 
 function Home() {
-  const [data, setData] = useRecoilState(AppInfomation);
+  const data = useRecoilValue(AppInfomation);
   const [category, setCategory] = useState("ALL");
   const [dialogData, setDialogData] = useState();
   const dialogRef = useRef(null);

@@ -13,9 +13,8 @@ const MapContainer = styled.div`
 function ParkinglotMap({ userid, userpassword }) {
   const map = useRef(null);
   const ps = useRef(null);
-  const [parkinglot, setParkingLot] = useState([]);
-  const [user, setUser] = useState({});
-  const [openParkingList, setOpenParkingList] = useState(false);
+  //const [parkinglot, setParkingLot] = useState([]);
+  //const [user, setUser] = useState({});
   const [userPosition, setUserPosition] = useState({
     la: 35.8242238,
     lo: 127.1479532,
@@ -40,16 +39,11 @@ function ParkinglotMap({ userid, userpassword }) {
       error,
       options
     );
-  }, [user, userid, userpassword]);
+  }, [userid, userpassword]);
   return (
     <MapContainer>
       <SearchPage ps={ps} setUserPosition={setUserPosition} />
-      <Map
-        map={map}
-        ps={ps}
-        setParkingLot={setParkingLot}
-        userPosition={userPosition}
-      />
+      <Map map={map} ps={ps} userPosition={userPosition} />
       <MapSizeController map={map} />
       <GpsController setUserPosition={setUserPosition} />
     </MapContainer>
