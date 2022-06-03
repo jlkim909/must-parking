@@ -4,46 +4,44 @@ import SearchListItem from "./SearchListItem";
 import { AiOutlineClose } from "react-icons/ai";
 import { BiSearch } from "react-icons/bi";
 
+const Container = styled.div`
+  display: flex;
+  justify-content: center;
+  width: 100%;
+`;
 const SearchKeywordContainer = styled.ul`
   background-color: white;
-  width: 50vw;
-  height: 26.31579vh;
+  width: 50%;
+  height: 40%;
+  left: 30%;
+  top: 4%;
   overflow-y: scroll;
-  top: 15.6vh;
-  left: 31.5vw;
   z-index: 2;
   padding: 0.75rem;
   margin: 1.25rem;
   position: absolute;
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
+  gap: 1rem;
   opacity: 0.9;
   border-radius: 8px;
-  &::-webkit-scrollbar {
-    width: 8px;
-  }
-  &::-webkit-scrollbar-thumb {
-    background-color: #707070;
-    border-radius: 8px;
-  }
 `;
 const SearchMenuContainer = styled.div`
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  margin-top: 1rem;
+  justify-content: space-evenly;
+  width: 92%;
 `;
 
 const CategoryBtn = styled.div`
-  width: 7.77777vw;
-  height: 3.68421vh;
+  width: 9%;
+  height: 100%;
   border-radius: 50%;
   box-shadow: 2px 2px 6px rgb(0 0 0 / 0.16);
 `;
 const SearchInputContainer = styled.div`
-  width: 47.7vw;
-  height: 3.68421vh;
+  width: 50%;
+  height: 90%;
   border-radius: 8px;
   padding: 0.5rem;
   font-size: 0.5rem;
@@ -92,7 +90,7 @@ function SearchPage({ ps, setUserPosition }) {
     setSearchKeyword("");
   }, []);
   return (
-    <div>
+    <Container>
       <SearchMenuContainer>
         <CategoryBtn
           style={{
@@ -116,6 +114,7 @@ function SearchPage({ ps, setUserPosition }) {
             }}
             placeholder="이동할 위치를 입력해주세요."
             onChange={onChangeKeyword}
+            onClick={(e) => e.preventDefault}
             value={searchKeyword}
           />
           <AiOutlineClose
@@ -145,7 +144,7 @@ function SearchPage({ ps, setUserPosition }) {
           />
         ))}
       </SearchKeywordContainer>
-    </div>
+    </Container>
   );
 }
 
