@@ -111,10 +111,11 @@ function SearchPage({ ps, setUserPosition }) {
           <input
             style={{
               width: "36vw",
+              outline: "none",
             }}
             placeholder="이동할 위치를 입력해주세요."
             onChange={onChangeKeyword}
-            onClick={(e) => e.preventDefault}
+            onFocus={(e) => e.preventDefault()}
             value={searchKeyword}
           />
           <AiOutlineClose
