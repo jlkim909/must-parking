@@ -1,7 +1,6 @@
 import styled from "@emotion/styled";
 import React from "react";
 import { IoCloseSharp } from "react-icons/io5";
-import Select from "react-select";
 
 const Container = styled.div`
   width: 100%;
@@ -52,11 +51,6 @@ const DialogBtn = styled.div`
 `;
 
 function DialogUse({ storeData, dialogRef }) {
-  const options = [
-    { value: "1", label: "1개" },
-    { value: "2", label: "2개" },
-    { value: "3", label: "3개" },
-  ];
   return (
     <Container>
       <Header>
@@ -85,7 +79,11 @@ function DialogUse({ storeData, dialogRef }) {
         </TextContainer>
         <TextContainer>
           <p>사용티켓</p>
-          <Select options={options} placeholder="개수" />
+          <select className="border-[#ECE6CC] border-2 w-[30%] ">
+            <option>1개</option>
+            <option>2개</option>
+            <option>3개</option>
+          </select>
         </TextContainer>
       </Body>
       <DialogBtn>주차 시작</DialogBtn>

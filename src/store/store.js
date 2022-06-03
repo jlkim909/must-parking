@@ -54,6 +54,26 @@ export const AppInfomation = atom({
                 {
                     storeName:"롯데슈퍼",
                     code:"MT1"
+                },
+                {
+                    storeName:"돈가스집",
+                    code:"FD6"
+                },
+                {
+                    storeName:"S-Oil",
+                    code:"OL7"
+                },
+                {
+                    storeName:"현대오일",
+                    code:"OL7"
+                },
+                {
+                    storeName:"E-Mart",
+                    code:"MT1"
+                },
+                {
+                    storeName:"롯데슈퍼",
+                    code:"MT1"
                 }
             ]
          }

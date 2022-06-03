@@ -47,6 +47,7 @@ const TicketContainer = styled.div`
   box-shadow: 2px 2px 4px lightgray;
   flex-wrap: wrap;
   border-radius: 8px;
+  overflow: scroll;
 `;
 
 const TicketItem = styled.div`
