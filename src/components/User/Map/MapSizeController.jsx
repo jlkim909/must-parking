@@ -7,13 +7,13 @@ const PlusMinusBoxContainer = styled.div`
   justify-content: space-evenly;
   flex-direction: column;
   position: absolute;
-  top: 35vh;
+  top: 35%;
   z-index: 1;
-  right: 8vw;
+  right: 8%;
   width: 2rem;
   height: 4rem;
   background-color: #f5f5f5;
-  box-shadow: 2px 2px 6px rgb(0 0 0 / 0.16);
+  box-shadow: 2px 2px lightgray;
 `;
 
 function MapSizeController({ map }) {
@@ -31,7 +31,7 @@ function MapSizeController({ map }) {
         className="text-lg cursor-pointer text-[#425470] font-bold"
         onClick={onExpandMap}
       />
-      <div className=" w-full h-[1px] bg-[#bfbfbf]" />
+      <div className=" w-full h-[0.08rem] bg-[#bfbfbf]" />
       <AiOutlineMinus
         className="text-lg cursor-pointer text-[#425470] font-bold sh"
         onClick={onReduceMap}

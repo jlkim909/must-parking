@@ -13,15 +13,14 @@ const SearchKeywordContainer = styled.ul`
   background-color: white;
   width: 50%;
   height: 40%;
-  left: 30%;
-  top: 4%;
+  left: 36%;
+  top: 8%;
   overflow-y: scroll;
   z-index: 2;
   padding: 0.75rem;
-  margin: 1.25rem;
   position: absolute;
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   gap: 1rem;
   opacity: 0.9;
   border-radius: 8px;
@@ -37,11 +36,11 @@ const CategoryBtn = styled.div`
   width: 9%;
   height: 100%;
   border-radius: 50%;
-  box-shadow: 2px 2px 6px rgb(0 0 0 / 0.16);
+  box-shadow: 2px 2px lightgray;
 `;
 const SearchInputContainer = styled.div`
   width: 50%;
-  height: 90%;
+  height: 100%;
   border-radius: 8px;
   padding: 0.5rem;
   font-size: 0.5rem;
@@ -110,16 +109,14 @@ function SearchPage({ ps, setUserPosition }) {
         <SearchInputContainer className="flex">
           <input
             style={{
-              width: "36vw",
               outline: "none",
             }}
             placeholder="이동할 위치를 입력해주세요."
             onChange={onChangeKeyword}
-            onFocus={(e) => e.preventDefault()}
             value={searchKeyword}
           />
           <AiOutlineClose
-            className="top-4 text-xs"
+            className="text-xs"
             style={{ display: `${searchKeyword === "" ? "none" : "flex"}` }}
             onClick={onClickClose}
           />
@@ -127,7 +124,6 @@ function SearchPage({ ps, setUserPosition }) {
         <BiSearch
           style={{
             fontSize: "1.5rem",
-            marginLeft: "0.25rem",
           }}
           onClick={onClickSearch}
         />

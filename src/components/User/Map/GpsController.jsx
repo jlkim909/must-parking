@@ -7,15 +7,15 @@ const GPSContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  bottom: 12vh;
-  right: 8vw;
+  bottom: 4%;
+  right: 8%;
   width: 2rem;
   height: 2rem;
   background-color: white;
   border-radius: 50%;
   cursor: pointer;
   z-index: 1;
-  box-shadow: 2px 2px 6px rgb(0 0 0 / 0.16);
+  box-shadow: 2px 2px lightgray;
 `;
 function GpsController({ setUserPosition }) {
   const onClickGps = useCallback(() => {

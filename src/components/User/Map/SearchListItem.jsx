@@ -37,11 +37,11 @@ function SearchListItem({ parkingName, category, address, setUserPosition }) {
   }, [address, setUserPosition]);
   return (
     <li className="text-[0.5rem] cursor-pointer" onClick={onClickItem}>
-      <div className="flex">
+      <div className="flex items-center">
         <CategoryIcon category={category} />
-        <span className="font-bold ml-1 mt-[-2px]">{parkingName}</span>
+        <span className="font-bold ml-1">{parkingName}</span>
       </div>
-      <span className="text-[#707070] text-[8px]">{address}</span>
+      <span className="text-[#707070] text-[0.5rem]">{address}</span>
     </li>
   );
 }

@@ -5,10 +5,10 @@ import styled from "@emotion/styled";
 import "../../../css/MapStyle.css";
 
 const MapContainer = styled.div`
-  width: 91.11111vw;
-  height: 70vh;
+  width: 92%;
+  height: 90%;
   margin-top: 0.75rem;
-  box-shadow: 2px 2px 6px rgb(0 0 0 / 0.16);
+  box-shadow: 2px 2px lightgray;
   border-radius: 8px;
 `;
 function Map({ map, ps, userPosition }) {
