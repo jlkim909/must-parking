@@ -5,7 +5,7 @@ import Home from "./components/Home";
 import InUse from "./components/InUse";
 import ParkinglotMap from "./components/Map/ParkinglotMap";
 import TopMenu from "./components/TopMenu";
-
+import {Auth} from 'aws-amplify'
 
 const Container = styled.div`
   position:absolute;
@@ -35,6 +35,7 @@ function Page(current) {
   }
 }
 function App() {
+  console.log(Auth);
   const [currentPage, setCurrentPage] = useState("HOME");
   return (
     <Container>

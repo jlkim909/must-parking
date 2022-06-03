@@ -4,7 +4,6 @@ import { IoCafe, IoCart } from "react-icons/io5";
 import { RiGasStationFill } from "react-icons/ri";
 import { ImSpoonKnife } from "react-icons/im";
 import ticketImg from "../image/ticket.png";
-import DialogTicket from "./Dialog/Dialog";
 
 const Inner = styled.div`
   width: fit-content;

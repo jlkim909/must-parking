@@ -5,7 +5,6 @@ import { AiOutlineGift } from "react-icons/ai";
 import {
   IoReceiptOutline,
   IoLogOutOutline,
-  IoCart,
   IoTimerOutline,
 } from "react-icons/io5";
 import Ticket from "./Ticket";
@@ -78,10 +77,7 @@ function InUse() {
       </UserInfoConatainer>
       <TicketInfoContainer>
         <div className="flex ml-4 gap-4">
-          <Ticket
-            innerIcon={<IoCart className="text-[#FFC900]" />}
-            width="20"
-          />
+          <Ticket categoryCode="MT1" width="20" />
           <span className="font-bold text-[#363636] mt-6">E-마트</span>
         </div>
         <div className="flex text-[#707070] font-bold gap-24 mt-4 items-center">

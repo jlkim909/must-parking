@@ -1,0 +1,15 @@
+{
+  "staging": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-mustparkingapp-staging-131623-authRole",
+      "UnauthRoleArn": "arn:aws:iam::911555407583:role/amplify-mustparkingapp-staging-131623-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::911555407583:role/amplify-mustparkingapp-staging-131623-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-mustparkingapp-staging-131623-deployment",
+      "UnauthRoleName": "amplify-mustparkingapp-staging-131623-unauthRole",
+      "StackName": "amplify-mustparkingapp-staging-131623",
+      "StackId": "arn:aws:cloudformation:us-east-1:911555407583:stack/amplify-mustparkingapp-staging-131623/34ddb5c0-ddbf-11ec-8c58-0eb31b0a72ad",
+      "AmplifyAppId": "d2ql7h2p72cv33"
+    }
+  }
+}
