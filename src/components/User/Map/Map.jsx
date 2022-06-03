@@ -1,8 +1,8 @@
 import React, { memo, useCallback, useEffect, useRef } from "react";
-import parkingLotImg from "../../image/parkingLot.png";
-import userPositionImg from "../../image/car.png";
+import parkingLotImg from "../../../image/parkingLot.png";
+import userPositionImg from "../../../image/car.png";
 import styled from "@emotion/styled";
-import "../../css/MapStyle.css";
+import "../../../css/MapStyle.css";
 
 const MapContainer = styled.div`
   width: 91.11111vw;

@@ -1,15 +1,14 @@
 import styled from "@emotion/styled";
 import React, { useCallback, useState } from "react";
-import DialogShare from "./DialogShare";
-import DialogTicket from "./DialogTicket";
-import DialogUse from "./DialogUse";
+import ShareInfo from "./ShareInfo";
+import TicketInfo from "./TicketInfo";
+import UseInfo from "./UseInfo";
 
-const DialogContainer = styled.dialog`
-  width: 68vw;
-  height: 40vh;
+const Container = styled.dialog`
+  width: 70%;
+  height: 40%;
   padding: 0;
-  flex-direction: column;
-  overflow: hidden;
+  border-radius: 4px;
   ::backdrop {
     background: rgba(107, 114, 128, 0.75);
   }
@@ -24,19 +23,19 @@ function Dialog({ dialogRef, storeData }) {
     []
   );
   return (
-    <DialogContainer ref={dialogRef} onClose={() => setDialogPage("INFO")}>
+    <Container ref={dialogRef} onClose={() => setDialogPage("INFO")}>
       {dialogPage === "USE" ? (
-        <DialogUse dialogRef={dialogRef} storeData={storeData} />
+        <UseInfo dialogRef={dialogRef} storeData={storeData} />
       ) : dialogPage === "SHARE" ? (
-        <DialogShare dialogRef={dialogRef} storeData={storeData} />
+        <ShareInfo dialogRef={dialogRef} storeData={storeData} />
       ) : (
-        <DialogTicket
+        <TicketInfo
           dialogRef={dialogRef}
           storeData={storeData}
           page={handlePage}
         />
       )}
-    </DialogContainer>
+    </Container>
   );
 }
 

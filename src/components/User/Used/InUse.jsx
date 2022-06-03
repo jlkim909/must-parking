@@ -7,48 +7,56 @@ import {
   IoLogOutOutline,
   IoTimerOutline,
 } from "react-icons/io5";
-import Ticket from "./Ticket";
+import Ticket from "../Home/Ticket";
+
+const Container = styled.div`
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 100%;
+  height: 78%;
+  overflow: hidden;
+`;
 const UserInfoConatainer = styled.div`
   display: flex;
   flex-direction: column;
-  width: 92.2222vw;
-  height: 22.6vh;
+  width: 92%;
+  height: 28%;
   background-color: white;
-  margin-top: 0.75rem;
-  box-shadow: -2px -2px 2px rgb(0 0 0 / 0.16), 2px 2px 2px rgb(0 0 0 / 0.16);
+  box-shadow: 2px 2px 4px lightgray;
 `;
 
 const TicketInfoContainer = styled.div`
   display: flex;
   flex-direction: column;
-  width: 92.2222vw;
-  height: 50vh;
+  align-items: center;
+  width: 92%;
+  height: 68%;
   background-color: white;
-  margin-top: 0.75rem;
   padding: 1.25rem;
   font-size: 1.5rem;
-  box-shadow: -2px -2px 2px rgb(0 0 0 / 0.16), 2px 2px 2px rgb(0 0 0 / 0.16);
+  box-shadow: 2px 2px 4px lightgray;
 `;
 
-const QuitBtn = styled.div`
+const EndButton = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
   background-color: #ece6cc;
   border-radius: 8px;
-  width: 56.1vw;
+  width: 60%;
+  height: 16%;
   font-size: 0.875rem;
   color: #707070;
   font-weight: bold;
-  margin-top: 1rem;
-  margin-left: 2.75rem;
-  height: 6.5789473vh;
-  box-shadow: 2px 2px 2px rgb(0 0 0 / 0.2);
+  box-shadow: 2px 2px 4px lightgray;
 `;
 
 function InUse() {
   return (
-    <div className="flex flex-col justify-center items-center mt-2">
+    <Container>
       <UserInfoConatainer>
         <div className="flex mt-4 ml-5 gap-2">
           <MdPortrait className="text-5xl text-[#9e9e9e]" />
@@ -76,25 +84,25 @@ function InUse() {
         </div>
       </UserInfoConatainer>
       <TicketInfoContainer>
-        <div className="flex ml-4 gap-4">
-          <Ticket categoryCode="MT1" width="20" />
-          <span className="font-bold text-[#363636] mt-6">E-마트</span>
+        <div className="flex gap-4 items-center w-[80%] h-[20%]">
+          <Ticket category="MT1" size={50} />
+          <span className="font-bold text-[#363636] mt-2">E-마트</span>
         </div>
-        <div className="flex text-[#707070] font-bold gap-24 mt-4 items-center">
+        <div className="flex text-[#707070] font-bold items-center justify-between w-[85%] h-[20%]">
           <span className="text-base">이용 시작 시간</span>
           <span>12 : 05</span>
         </div>
-        <div className="flex text-[#707070] font-bold gap-24 mt-4 items-center">
+        <div className="flex text-[#707070] font-bold items-center justify-between w-[85%]">
           <span className="text-base">이용 종료 시간</span>
           <span>15 : 04</span>
         </div>
-        <div className="flex items-center mt-10 ml-[12.625rem]">
+        <div className="flex items-center w-[85%] h-[30%] justify-end">
           <IoTimerOutline className="text-[1.5rem]" />
           <span className="font-bold ml-2">59분</span>
         </div>
-        <QuitBtn>사용 종료</QuitBtn>
+        <EndButton>사용 종료</EndButton>
       </TicketInfoContainer>
-    </div>
+    </Container>
   );
 }
 

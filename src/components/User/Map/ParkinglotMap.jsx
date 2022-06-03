@@ -5,10 +5,13 @@ import MapSizeController from "./MapSizeController";
 import GpsController from "./GpsController";
 import styled from "@emotion/styled";
 
-const MapContainer = styled.div`
+const Container = styled.div`
+  position: relative;
   display: flex;
-  flex-direction: column;
   align-items: center;
+  flex-direction: column;
+  width: 100%;
+  height: 78%;
 `;
 function ParkinglotMap({ userid, userpassword }) {
   const map = useRef(null);
@@ -41,12 +44,12 @@ function ParkinglotMap({ userid, userpassword }) {
     );
   }, [userid, userpassword]);
   return (
-    <MapContainer>
+    <Container>
       <SearchPage ps={ps} setUserPosition={setUserPosition} />
       <Map map={map} ps={ps} userPosition={userPosition} />
       <MapSizeController map={map} />
       <GpsController setUserPosition={setUserPosition} />
-    </MapContainer>
+    </Container>
   );
 }
 

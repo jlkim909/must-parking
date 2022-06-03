@@ -7,15 +7,14 @@ import {
   IoHomeOutline,
 } from "react-icons/io5";
 
-const BottomMenuContainer = styled.div`
-  position: absolute;
+const Container = styled.div`
+  position: relative;
   display: flex;
-  bottom: 0;
   width: 100%;
-  height: 8.42105vh;
+  height: 10%;
   background-color: white;
   border-radius: 8px 8px 0 0;
-  box-shadow: 0 -2px 8px rgb(0 0 0 / 0.16);
+  box-shadow: 0 0 2px lightgray;
   justify-content: space-evenly;
 `;
 
@@ -25,15 +24,15 @@ const BottomItem = styled.div`
   align-items: center;
   justify-content: center;
 `;
-function BottomMenu({ currentPage, setCurrentPage }) {
+function BottomMenu({ page, handlePage }) {
   return (
-    <BottomMenuContainer>
+    <Container>
       <BottomItem
         style={{
-          color: `${currentPage === "HOME" ? "#50accb" : "black"}`,
+          color: `${page === "HOME" ? "#50accb" : "black"}`,
         }}
         onClick={() => {
-          setCurrentPage("HOME");
+          handlePage("HOME");
         }}
       >
         <IoHomeOutline className="text-[2rem]" />
@@ -41,10 +40,10 @@ function BottomMenu({ currentPage, setCurrentPage }) {
       </BottomItem>
       <BottomItem
         style={{
-          color: `${currentPage === "INUSE" ? "#50accb" : "black"}`,
+          color: `${page === "INUSE" ? "#50accb" : "black"}`,
         }}
         onClick={() => {
-          setCurrentPage("INUSE");
+          handlePage("INUSE");
         }}
       >
         <IoTicketOutline className="text-[2rem]" />
@@ -52,10 +51,10 @@ function BottomMenu({ currentPage, setCurrentPage }) {
       </BottomItem>
       <BottomItem
         style={{
-          color: `${currentPage === "MAP" ? "#50accb" : "black"}`,
+          color: `${page === "MAP" ? "#50accb" : "black"}`,
         }}
         onClick={() => {
-          setCurrentPage("MAP");
+          handlePage("MAP");
         }}
       >
         <IoMapOutline className="text-[2rem]" />
@@ -65,7 +64,7 @@ function BottomMenu({ currentPage, setCurrentPage }) {
         <IoQrCodeOutline className="text-[2rem]" />
         <p className="text-xs font-bold">QR</p>
       </BottomItem>
-    </BottomMenuContainer>
+    </Container>
   );
 }
 

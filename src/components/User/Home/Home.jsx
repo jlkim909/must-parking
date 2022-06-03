@@ -5,20 +5,30 @@ import { RiGasStationFill } from "react-icons/ri";
 import { ImSpoonKnife } from "react-icons/im";
 import Ticket from "./Ticket";
 import { useRecoilValue } from "recoil";
-import { AppInfomation } from "../store/store";
+import { AppInfomation } from "../../../store/store";
+import Dialog from "../../Dialog/Dialog";
 import NoTicket from "./NoTicket";
-import Dialog from "./Dialog/Dialog";
+
+const Container = styled.div`
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  height: 78%;
+`;
 
 const TagContainer = styled.div`
   width: 100%;
-  height: 10vh;
+  height: 10%;
+  display: flex;
   align-items: center;
   justify-content: space-evenly;
-  display: flex;
 `;
+
 const TagItem = styled.div`
-  width: 17.77778vw;
-  height: 4.2105263157vh;
+  width: 20%;
+  height: 60%;
   background-color: white;
   border-radius: 20px;
   display: flex;
@@ -26,21 +36,24 @@ const TagItem = styled.div`
   justify-content: center;
   font-size: 0.75rem;
   gap: 0.25rem;
-  box-shadow: 4px 4px 6px rgb(0 0 0 / 0.16);
+  box-shadow: 2px 2px lightgray;
 `;
 
 const TicketContainer = styled.div`
-  position: absolute;
   display: flex;
-  margin-top: 10vh;
-  width: 92.22222vw;
-  height: 65.5264vh;
+  width: 92%;
+  height: 88%;
   background-color: white;
-  box-shadow: -2px -2px 2px rgb(0 0 0 / 0.16), 2px 2px 2px rgb(0 0 0 / 0.16);
-  padding: 1.5rem;
-  overflow: scroll;
+  box-shadow: 2px 2px 4px lightgray;
   flex-wrap: wrap;
   border-radius: 8px;
+`;
+
+const TicketItem = styled.div`
+  width: 33%;
+  margin-top: 10%;
+  display: flex;
+  align-items: center;
 `;
 
 function Home() {
@@ -56,14 +69,12 @@ function Home() {
       setCategory(code);
     }
   };
-
-  console.log(data);
   const onClickTicket = (data) => () => {
     dialogRef.current.showModal();
     setDialogData(data);
   };
   return (
-    <div className="flex flex-col items-center">
+    <Container>
       <TagContainer>
         <TagItem
           onClick={onClickTag("CE7")}
@@ -111,13 +122,13 @@ function Home() {
           userTicket?.map((store, index) => {
             if (category === "ALL" || category === store.code) {
               return (
-                <div
+                <TicketItem
                   className="flex flex-col text-center"
                   key={index}
                   onClick={onClickTicket(store)}
                 >
-                  <Ticket categoryCode={store.code} width="20" />
-                  <p className=" ml-[-5.6vw] mt-[-2vh] text-xs font-bold">
+                  <Ticket category={store.code} size={60} />
+                  <p className="mt-[4%] font-bold text-[#303030]">
                     {store.storeName.indexOf(" ") > 0
                       ? store.storeName.slice(0, store.storeName.indexOf(" "))
                       : store.storeName}
@@ -129,7 +140,7 @@ function Home() {
                         )
                       : ""}
                   </p>
-                </div>
+                </TicketItem>
               );
             } else {
               return null;
@@ -138,9 +149,9 @@ function Home() {
         ) : (
           <NoTicket />
         )}
-        <Dialog dialogRef={dialogRef} storeData={dialogData} />
       </TicketContainer>
-    </div>
+      <Dialog dialogRef={dialogRef} storeData={dialogData} />
+    </Container>
   );
 }
 
