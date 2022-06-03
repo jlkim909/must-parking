@@ -4,10 +4,7 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { RecoilRoot } from 'recoil';
-import Amplify from 'aws-amplify'
-import awsconfig from './aws-exports'
 
-Amplify.configure(awsconfig)
 ReactDOM.render(
   <React.StrictMode>
     <RecoilRoot>
