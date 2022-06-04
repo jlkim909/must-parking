@@ -5,6 +5,8 @@ import BottomMenu from "./BottomMenu";
 import Home from "./Home/Home";
 import TopMenu from "./TopMenu";
 import InUse from "./Used/InUse";
+import GiftBox from "./Used/GiftBox";
+import Paycheck from "./Used/Paycheck";
 
 const Container = styled.div`
   position: absolute;
@@ -17,11 +19,15 @@ function User() {
   const [page, setPage] = useState("HOME");
   return (
     <Container>
-      <TopMenu />
+      <TopMenu page={page} handlePage={setPage} />
       {page === "INUSE" ? (
-        <InUse />
+        <InUse handlePage={setPage} />
       ) : page === "MAP" ? (
         <ParkinglotMap />
+      ) : page === "GIFT" ? (
+        <GiftBox />
+      ) : page === "PAYCHECK" ? (
+        <Paycheck />
       ) : (
         <Home />
       )}

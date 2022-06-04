@@ -54,7 +54,7 @@ const EndButton = styled.div`
   box-shadow: 2px 2px 4px lightgray;
 `;
 
-function InUse() {
+function InUse({ handlePage }) {
   return (
     <Container>
       <UserInfoConatainer>
@@ -63,13 +63,19 @@ function InUse() {
           <span className="font-bold text-xl mt-4">OOO 님</span>
         </div>
         <div className="flex justify-evenly mt-9 gap-12">
-          <div className="flex flex-col items-center justify-center">
+          <div
+            className="flex flex-col items-center justify-center"
+            onClick={() => handlePage("GIFT")}
+          >
             <AiOutlineGift className="text-3xl" />
             <span className="text-xs font-bold mt-1 text-[#707070]">
               선물함
             </span>
           </div>
-          <div className="flex flex-col items-center justify-center">
+          <div
+            className="flex flex-col items-center justify-center"
+            onClick={() => handlePage("PAYCHECK")}
+          >
             <IoReceiptOutline className="text-3xl" />
             <span className="text-xs font-bold mt-1 text-[#707070]">
               이용내역
