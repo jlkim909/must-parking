@@ -7,6 +7,7 @@ import TopMenu from "./TopMenu";
 import InUse from "./Used/InUse";
 import GiftBox from "./Used/GiftBox";
 import Paycheck from "./Used/Paycheck";
+import QR from "./QR/QR";
 
 const Container = styled.div`
   position: absolute;
@@ -24,6 +25,8 @@ function User() {
         <InUse handlePage={setPage} />
       ) : page === "MAP" ? (
         <ParkinglotMap />
+      ) : page === "QR" ? (
+        <QR />
       ) : page === "GIFT" ? (
         <GiftBox />
       ) : page === "PAYCHECK" ? (

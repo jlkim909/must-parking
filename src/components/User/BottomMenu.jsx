@@ -60,7 +60,14 @@ function BottomMenu({ page, handlePage }) {
         <IoMapOutline className="text-[2rem]" />
         <p className="text-xs font-bold">Map</p>
       </BottomItem>
-      <BottomItem>
+      <BottomItem
+        style={{
+          color: `${page === "QR" ? "#50accb" : "black"}`,
+        }}
+        onClick={() => {
+          handlePage("QR");
+        }}
+      >
         <IoQrCodeOutline className="text-[2rem]" />
         <p className="text-xs font-bold">QR</p>
       </BottomItem>
