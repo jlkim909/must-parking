@@ -18,7 +18,6 @@ function QR() {
         onScan={(value) => setData(value)}
         onError={(err) => console.log(err)}
         style={{ width: "320", height: "240" }}
-        facingMode="environment"
       />
     </Container>
   );
