@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
 import React, { useState } from "react";
-import { QrReader } from "react-qr-reader";
+import QrReader from "react-qr-scanner";
 
 const Container = styled.div`
   position: relative;
@@ -10,22 +10,16 @@ const Container = styled.div`
 
 function QR() {
   const [data, setData] = useState("No result");
-
+  console.log(data);
   return (
     <Container>
       <QrReader
-        onResult={(result, error) => {
-          if (!!result) {
-            setData(result?.text);
-          }
-
-          if (!!error) {
-            console.info(error);
-          }
-        }}
-        style={{ width: "100%" }}
+        delay={1000}
+        onScan={(value) => setData(value)}
+        onError={(err) => console.log(err)}
+        style={{ width: "320", height: "240" }}
+        facingMode="environment"
       />
-      <p>{data}</p>
     </Container>
   );
 }
